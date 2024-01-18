@@ -23,6 +23,8 @@ function fetchNews() {
     // Base URL with language, category, and query parameter 'economy'. Also limits number of articles returned to 5. Doesn't seem to work
     const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy%20AND%20${userInput}&language=en&category=business,politics,crime,technology,domestic&size=5`
 
+// Fetch function
+function fetchNews() {
     fetch(newsBaseURL)
         .then(function (response) {
             return response.json();
@@ -41,16 +43,18 @@ function fetchNews() {
 
             let link = data.results[i].link
 
-// Append to 
-        let titleEl = $('<h2>').text(title)
-        let imgEl = $('<img>').attr('src', img)
-        let pEl = $('<p>').text(description)
-        let linkEl = $('<a>').attr('href', link).text('Link to full article').attr('target', 'blank')
+// Create elements for title, image, description and link
+        $('#title-0').text(title)
+        $('#image-0').attr('src', img)
+        $('#description-0').text(description)
+        $('#link-0').attr('href', link).text('Link to full article').attr('target', 'blank')
 
-        // append news information to the news section of document
-        $('#news-section').append(titleEl, imgEl, pEl, linkEl)
+        // // append news information to the news section of document
+        // $('#news-section').append(titleEl, imgEl, pEl, linkEl)
             }
-            })
-        }
 
+            })
+            
+        }
+    }
 })
