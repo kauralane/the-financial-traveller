@@ -14,43 +14,27 @@ let userInput = 'gb'
 // Base URL with language 
     const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy&language=en&category=business,politics,crime,technology,domestic&country=${userInput}`
 
-// Fetch method
+// Fetch function
+function fetchNews() {
     fetch(newsBaseURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data)
-
-// Will insert for loop here later, to render articles from first 5 results
-            
+            for (let i = 0; i < 5; i++) {
 // Article titles, images, descriptions, links
-            console.log(data.results[0].title)
-            let title = data.results[0].title
-            
+            let title = data.results[i].title
 // Image element not working yet
-            console.log(data.results[0].image_URL)
-            let img = data.results[0].image_URL
-
-            console.log(data.results[0].description)
-            let description = data.results[0].description
-
-            console.log(data.results[0].link)
-            let link = data.results[0].link
-
-        let titleEl = $('<h2>').text(title)
-        let imgEl = $('<img>').attr('src', img)
-        let pEl = $('<p>').text(description)
-        let linkEl = $('<a>').attr('href', link).text('Link to full article')
-
+            let img = data.results[i].image_url
+            let description = data.results[i].description
+            let link = data.results[i].link
+        let titleEl = $(‘<h2>‘).text(title)
+        let imgEl = $(‘<img>’).attr(‘src’, img)
+        let pEl = $(‘<p>‘).text(description)
+        let linkEl = $(‘<a>’).attr(‘href’, link).text(‘Link to full article’).attr(‘target’, ‘blank’)
         // append news information to the news section of document
-        $('#news-section').append(titleEl, imgEl, pEl, linkEl)
-            
-            // }
-
-        })
-
-})
-
-
-
+        $(‘#news-section’).append(titleEl, imgEl, pEl, linkEl)
+            }
+            })
+        }

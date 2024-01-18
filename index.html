@@ -13,21 +13,65 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
 
     <!-- Custom CSS stylesheet -->
-    <link href="assets/CSS/style.css" rel="stylesheet" />
+    <link href="./assets/CSS/style.css" rel="stylesheet" />
   </head>
 
   <body>
     <h1>The Financial Traveller</h1>
-
-    <container class="container-fluid"></container>
-    <row>
-    <div class="col-lg-4">
-        <h2>Latest News</h2>
-        <div id="news-section"></div>
-    </div>
-    </row>
+<!--News Section-->
+<section id="news">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!---card1--->
+                        <div class="carousel-item active">
+                            <div class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                                <img src="https://placehold.co/300x200" class="newsstoryimg" alt="">
+                                <div class="card-body">
+                                    <h5 id="card1" class="card-title">CARD1</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem provident quo iure ab reprehenderit, blanditiis sed nobis aut sit error molestias eaque reiciendis, iusto dignissimos? Blanditiis nisi eligendi iure autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos fugit amet id laboriosam placeat perspiciatis maxime ratione. Exercitationem hic tempora repudiandae sequi quia optio expedita sapiente blanditiis ea dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vitae molestias officia! Officia architecto quisquam quasi. Illum, voluptas exercitationem! Dolorum harum magnam aliquid id blanditiis ad impedit voluptate facilis ab!</p>
+                                    <a href="">Check it out!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!---card2--->
+                        <div class="carousel-item">
+                            <div id="card2" class="card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">CARD 2</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet consectetur harum hic molestiae ratione debitis amet error eaque fugiat iste. Saepe esse sed officia eligendi voluptatum, pariatur consequuntur corporis exercitationem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, perferendis corrupti molestiae eius, voluptas fugiat cupiditate, et totam cum maiores distinctio recusandae? Tempora, architecto. Esse distinctio tempora corporis accusantium enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto fugiat hic ab repellat autem illo inventore sequi, facilis nesciunt vitae expedita animi facere, sapiente minima aliquam pariatur voluptatem cum?</p>
+                                    <a href="" class="btn btn-primary">Check it out!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--card3-->
+                        <div class="carousel-item">
+                            <div id="card3" class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                                <img src="https://placehold.co/300x200" alt="Placeholder Image" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">CARD 3</h5>
+                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur repellendus consectetur dolores suscipit atque, asperiores quidem temporibus voluptatum nam repudiandae id? Iste adipisci placeat exercitationem sunt fugiat. Deleniti, deserunt quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolore hic, provident vitae beatae, in reiciendis similique error voluptatem aperiam dignissimos! Nobis officiis placeat vero optio ipsam voluptas sunt ab! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eligendi dolores sed nisi soluta, minus voluptatibus nobis! At adipisci possimus accusamus, blanditiis distinctio dolorem, autem dolor nulla deserunt, fuga eligendi.</p>
+                                    <a href="" class="btn btn-primary">Check it out!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- jQuery script -->
     <script
@@ -38,5 +82,6 @@
 
 <!-- Custom  -->
     <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
