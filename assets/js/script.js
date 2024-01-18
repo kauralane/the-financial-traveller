@@ -29,8 +29,8 @@ let userInput = 'gb'
             let title = data.results[0].title
             
 // Image element not working yet
-            console.log(data.results[0].image_URL)
-            let img = data.results[0].image_URL
+            console.log(data.results[0].image_url)
+            let img = data.results[0].image_url
 
             console.log(data.results[0].description)
             let description = data.results[0].description
@@ -41,7 +41,7 @@ let userInput = 'gb'
         let titleEl = $('<h2>').text(title)
         let imgEl = $('<img>').attr('src', img)
         let pEl = $('<p>').text(description)
-        let linkEl = $('<a>').attr('href', link).text('Link to full article')
+        let linkEl = $('<a>').attr('href', link).text('Link to full article').attr ('target','blank')
 
         // append news information to the news section of document
         $('#news-section').append(titleEl, imgEl, pEl, linkEl)
