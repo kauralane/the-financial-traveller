@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #000000, #000080); /* black to dark blue */
+    background: linear-gradient(to right, #000000, #000080, #336699); /* black to dark blue */
     margin: 0; /* Remove default margin to fill the entire viewport */
 }
 
