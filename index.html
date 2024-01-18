@@ -18,16 +18,18 @@
 
   <body>
     <h1>The Financial Traveller</h1>
-    <input 
+    <input type="text" placeholder="Zimbabwe" id="search-input"/>
+    <button id="search-button">Search</button>
 
-<!--News Section-->
+<!--News Section -->
 <section id="news">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-12">
                 <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <!---card1--->
+
+                        <!---card0--->
                         <div class="carousel-item active">
                             <div class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
                                 <img class="newsstoryimg" id="image-0" alt="">
@@ -38,28 +40,31 @@
                                 </div>
                             </div>
                         </div>
-                        <!---card2--->
+
+                        <!---card1--->
                         <div class="carousel-item">
                             <div id="card2" class="card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
-                                <img src="https://placehold.co/300x200" class="card-img-top" alt="">
+                                <img class="card-img-top" alt="" id="image-1">
                                 <div class="card-body">
-                                    <h5 class="card-title">CARD 2</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet consectetur harum hic molestiae ratione debitis amet error eaque fugiat iste. Saepe esse sed officia eligendi voluptatum, pariatur consequuntur corporis exercitationem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, perferendis corrupti molestiae eius, voluptas fugiat cupiditate, et totam cum maiores distinctio recusandae? Tempora, architecto. Esse distinctio tempora corporis accusantium enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto fugiat hic ab repellat autem illo inventore sequi, facilis nesciunt vitae expedita animi facere, sapiente minima aliquam pariatur voluptatem cum?</p>
-                                    <a href="" class="btn btn-primary">Check it out!</a>
+                                    <h5 id="title-1" class="card-title">CARD 2</h5>
+                                    <p id ="description-1" class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet consectetur harum hic molestiae ratione debitis amet error eaque fugiat iste. Saepe esse sed officia eligendi voluptatum, pariatur consequuntur corporis exercitationem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, perferendis corrupti molestiae eius, voluptas fugiat cupiditate, et totam cum maiores distinctio recusandae? Tempora, architecto. Esse distinctio tempora corporis accusantium enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto fugiat hic ab repellat autem illo inventore sequi, facilis nesciunt vitae expedita animi facere, sapiente minima aliquam pariatur voluptatem cum?</p>
+                                    <a id="link-1" class="btn btn-primary">Check it out!</a>
                                 </div>
                             </div>
                         </div>
-                        <!--card3-->
+
+                        <!--card2-->
                         <div class="carousel-item">
                             <div id="card3" class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
-                                <img src="https://placehold.co/300x200" alt="Placeholder Image" class="card-img-top" alt="">
+                                <img id="image-2" alt="Placeholder Image" class="card-img-top" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">CARD 3</h5>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur repellendus consectetur dolores suscipit atque, asperiores quidem temporibus voluptatum nam repudiandae id? Iste adipisci placeat exercitationem sunt fugiat. Deleniti, deserunt quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolore hic, provident vitae beatae, in reiciendis similique error voluptatem aperiam dignissimos! Nobis officiis placeat vero optio ipsam voluptas sunt ab! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eligendi dolores sed nisi soluta, minus voluptatibus nobis! At adipisci possimus accusamus, blanditiis distinctio dolorem, autem dolor nulla deserunt, fuga eligendi.</p>
-                                    <a href="" class="btn btn-primary">Check it out!</a>
+                                    <h5 id="title-2" class="card-title">CARD 3</h5>
+                                    <p id ="description-2" class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur repellendus consectetur dolores suscipit atque, asperiores quidem temporibus voluptatum nam repudiandae id? Iste adipisci placeat exercitationem sunt fugiat. Deleniti, deserunt quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dolore hic, provident vitae beatae, in reiciendis similique error voluptatem aperiam dignissimos! Nobis officiis placeat vero optio ipsam voluptas sunt ab! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eligendi dolores sed nisi soluta, minus voluptatibus nobis! At adipisci possimus accusamus, blanditiis distinctio dolorem, autem dolor nulla deserunt, fuga eligendi.</p>
+                                    <a id="link-2" class="btn btn-primary">Check it out!</a>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

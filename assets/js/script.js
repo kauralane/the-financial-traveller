@@ -21,16 +21,13 @@ function fetchNews() {
     let userInput = $('#search-input').val().trim();
     
     // Base URL with language, category, and query parameter 'economy'. Also limits number of articles returned to 5. Doesn't seem to work
-    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy%20AND%20${userInput}&language=en&category=business,politics,crime,technology,domestic&size=5`
+    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy%20AND%20${userInput}&language=en&category=business,politics,crime,technology,domestic&size=3`
 
-// Fetch function
-function fetchNews() {
     fetch(newsBaseURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
 
             for (let i = 0; i < 5; i++) {
                 
@@ -43,18 +40,15 @@ function fetchNews() {
 
             let link = data.results[i].link
 
-// Create elements for title, image, description and link
-        $('#title-0').text(title)
-        $('#image-0').attr('src', img)
-        $('#description-0').text(description)
-        $('#link-0').attr('href', link).text('Link to full article').attr('target', 'blank')
+// Need to change this to for loop so numbers are replaced with [i]
+                $(`#title-${i}`).text(title)
+                $(`#image-${i}`).attr('src', img)
+                $(`#description-${i}`).text(description)
+                $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
 
-        // // append news information to the news section of document
-        // $('#news-section').append(titleEl, imgEl, pEl, linkEl)
             }
 
             })
             
         }
-    }
 })
