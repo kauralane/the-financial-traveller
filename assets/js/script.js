@@ -1,8 +1,51 @@
 $(function () {
-    const apiKeyEx = "8d6403f7b11515b6add06ccb75af36f5";
-    const apiBaseURLEx = "https://api.exchangeratesapi.io/v1/";
-    
-    
+
+// Billy previous API
+    // const apiKeyEx = "8d6403f7b11515b6add06ccb75af36f5";
+    // const apiBaseURLEx = "https://api.exchangeratesapi.io/v1/";
+
+
+
+    // LAURA CURRENCY API - please change if needed; just so that we technically have a second API (in case something goes wrong!)
+
+    // To note - this API gives 1500 fetches total 
+    const exAPIKey = "1569a418148c4ece3affae5f"
+
+    function getExchangeRate() {
+
+    let baseCurrency = $('#base-input').val().trim();
+    let targetCurrency = $('#target-input').val().trim();
+    const exURL = `https://v6.exchangerate-api.com/v6/${exAPIKey}/pair/${baseCurrency}/${targetCurrency}`;
+
+                fetch(exURL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data)
+                
+                let base = data.base_code;
+                let target = data.target_code;
+                let rate = data.conversion_rate;
+
+                let baseEl = $('<h5>').text(`Base currency: ${base}`)
+                let targetEl = $('<h5>').text(`Target currency: ${target}`)
+                let rateEl = $('<h3>').text(`Conversion rate: ${rate}`)
+
+                $('#exchange-results').append(baseEl, targetEl, rateEl)
+
+                // Empty the previous search from the boxes
+                    $('#base-input').val("");
+                    $('#target-input').val("");
+
+                })
+            }
+
+    $('#currency-search-button').on('click', function() {
+        getExchangeRate()
+    })
+
+
 
     // NEWS API CODE - LK
     const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba";

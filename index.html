@@ -78,13 +78,23 @@
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
                     </button>
                 </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <h3>Currency converter search: please enter a 3-letter currency code</h3>
+    <h5>Convert from...</h5>
+    <input type="text" placeholder="Ex: GBP" id="base-input"/>
+    <h5>Convert to...</h5>
+    <input type="text" placeholder="Ex: USD" id="target-input"/>
+    <br>
+    <br>
+    <button id="currency-search-button">Get exchange rate</button>
+    <div id="exchange-results">
+    </div>
 
     <!-- jQuery script -->
     <script
