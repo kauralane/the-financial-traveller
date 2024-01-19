@@ -19,14 +19,18 @@
 
   <body>
 
-    <h1>The Financial Traveller</h1>
+     <!-- Hero Section -->
+     <div id="hero-section">
+        <div id="hero-image"><img id="logo" src="./assets/images/Untitled design.png"></div>
+        <h1>Discover Financial Opportunities Globally!</h1>
     <input type="text" placeholder="England" id="search-input"/>
-    <button id="search-button">Search</button>
-    <h3>Previous searches:</h3>
-    <div id="history">
+    <button id="search-button">&#128269;</button>
     </div>
 
 <!--News Section -->
+<h3 id="prev-search">Previous searches:</h3>
+    <div id="history">
+    </div>
 <section id="news">
         <div class="container">
             <div class="row justify-content-center">
@@ -36,7 +40,7 @@
 
                         <!---card0--->
                         <div class="carousel-item active">
-                            <div class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                            <div class="cards" class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
                                 <img class="newsstoryimg" id="image-0" alt="">
                                 <div class="card-body">
 
@@ -49,7 +53,7 @@
 
                         <!---card1--->
                         <div class="carousel-item">
-                            <div id="card2" class="card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                            <div class="cards" id="card2" class="card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
                                 <img class="card-img-top" alt="" id="image-1">
                                 <div class="card-body">
                                     <h5 id="title-1" class="card-title">CARD 2</h5>
@@ -61,7 +65,7 @@
 
                         <!--card2-->
                         <div class="carousel-item">
-                            <div id="card3" class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
+                            <div class="cards" id="card3" class="card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" style="width: 100%; max-width: 65rem;">
                                 <img id="image-2" alt="Placeholder Image" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 id="title-2" class="card-title">CARD 3</h5>
