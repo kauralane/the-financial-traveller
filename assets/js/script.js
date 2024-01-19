@@ -48,7 +48,7 @@ let userInput = $('#search-input').val().trim();
 // }
 
 // On-click function for the search button
-    $('#search-form').on('submit', function () {
+    $('#search-button').on('click', function () {
             fetchNews();
     })
 
@@ -67,6 +67,15 @@ function fetchNews() {
         .then(function (data) {
             console.log(data)
 
+if (data.results == 0) {
+    for (let i = 0; i < 3; i++) {
+        $(`#title-${i}`).text('No current news')
+        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg") 
+        $(`#description-${i}`).text('Why not try searching a different country?')
+        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank')
+    }
+}
+else {
 // For loop to render each article to it's corresponding card
             for (let i = 0; i < 3; i++) {
                 
@@ -85,7 +94,7 @@ function fetchNews() {
 
 // Clear out the user's search 
             $('#search-input').val("")
-
+            }
             }
 
             })
