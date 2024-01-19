@@ -11,27 +11,65 @@ $(function () {
 const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba";
 let userInput = $('#search-input').val().trim();
 
-    $('#search-button').on('click', function () {
-        fetchNews()
+// BELOW CODE NOT YET WORKING
+// // Need to write if statement to only load the England search 
+// if ($('#news').empty()) {
+//     fetchEnglandNews();
+// }
+
+// // Load up news from England when user first loads the page
+// function fetchEnglandNews() {
+//         let newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=England&language=en&category=business&size=3`
+
+//         fetch(newsURL)
+//             .then(function (response) {
+//                 return response.json();
+//             })
+//             .then(function (data) {
+//                 console.log(data)
+
+//                 for (let i = 0; i < 3; i++) {
+
+//                     // Article titles, images, descriptions, links
+//                     let title = data.results[i].title
+
+//                     let img = data.results[i].image_url
+
+//                     let description = data.results[i].description
+
+//                     let link = data.results[i].link
+
+//                     $(`#title-${i}`).text(title)
+//                     $(`#image-${i}`).attr('src', img)
+//                     $(`#description-${i}`).text(description)
+//                     $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+//     }
+// })
+// }
+
+// On-click function for the search button
+    $('#search-form').on('submit', function () {
+            fetchNews();
     })
 
-// Fetch function
-function fetchNews() {
 
+// Fetch function which incorporates user search
+function fetchNews() {
     let userInput = $('#search-input').val().trim();
     
-    // Base URL with language, category, and query parameter 'economy'. Also limits number of articles returned to 5. Doesn't seem to work
-    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy%20AND%20${userInput}&language=en&category=business,politics,crime,technology,domestic&size=3`
+    // Base URL with language, category (business), and limit on number of articles
+    const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`
 
-    fetch(newsBaseURL)
+    fetch(newsURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
+            console.log(data)
 
-            for (let i = 0; i < 5; i++) {
+// For loop to render each article to it's corresponding card
+            for (let i = 0; i < 3; i++) {
                 
-// Article titles, images, descriptions, links
             let title = data.results[i].title
             
             let img = data.results[i].image_url
@@ -40,15 +78,17 @@ function fetchNews() {
 
             let link = data.results[i].link
 
-// Need to change this to for loop so numbers are replaced with [i]
                 $(`#title-${i}`).text(title)
                 $(`#image-${i}`).attr('src', img)
                 $(`#description-${i}`).text(description)
                 $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+
+// Clear out the user's search 
+            $('#search-input').val("")
 
             }
 
             })
             
         }
-})
+    })
