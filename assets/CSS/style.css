@@ -2,6 +2,9 @@ body {
     background: linear-gradient(to right, #000000, #000080, #336699);
     margin: 0;
     text-align: center;
+}
+
+h1, h3, h5 {
     color: white;
     font-weight: bold;
 }
