@@ -53,7 +53,7 @@ $(function () {
     renderHistory();
 
     // On-click function for the search button
-    $('#search-button').on('click', function () {
+    $('#search-input').on('click', function () {
         fetchNews();
     })
 
