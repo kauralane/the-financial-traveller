@@ -97,3 +97,9 @@ h1, h3, h5 {
       label {
         color: white;
       }
+
+      select, option {
+            max-width: 40%;
+            white-space: normal;
+            text-overflow: ellipsis;
+      }
