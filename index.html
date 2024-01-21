@@ -89,14 +89,29 @@
         </div>
     </section>
 
-    <h3>Currency converter search: please enter a 3-letter currency code</h3>
-    <h5>Convert from...</h5>
-    <input type="text" placeholder="Ex: GBP" id="base-input"/>
-    <h5>Convert to...</h5>
-    <input type="text" placeholder="Ex: USD" id="target-input"/>
+    <h3>Currency converter search: please select a country/currency from the drop-down menu</h3>
+
     <br>
+<label for="currencies">Convert from</label>
+<select name="currencies" id="base-input">
+  <option value="" disabled selected>Select a country/currency</option>
+  <option value="GBP">United Kingdom (British Pounds)</option>
+  <option value="USD">USA (US Dollars)</option>
+  <option value="JPY">Japan (Japanese Yen)</option>
+</select>
+
+    <br>
+<label for="currencies">Convert to</label>
+<select name="currencies" id="target-input">
+  <option value="" disabled selected>Select a country/currency</option>
+  <option value="GBP">United Kingdom (British Pounds)</option>
+  <option value="USD">USA (US Dollars)</option>
+  <option value="JPY">Japan (Japanese Yen)</option>
+</select>
+
     <br>
     <button id="currency-search-button">Get exchange rate</button>
+    <br>
     <div id="exchange-results">
     </div>
 
