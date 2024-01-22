@@ -13,6 +13,8 @@ $(function () {
 
     function getExchangeRate() {
 
+$('#exchange-results').empty();
+
     let baseCurrency = $('#base-input').val().trim();
     let targetCurrency = $('#target-input').val().trim();
     const exURL = `https://v6.exchangerate-api.com/v6/${exAPIKey}/pair/${baseCurrency}/${targetCurrency}`;
@@ -27,11 +29,10 @@ $(function () {
                 let target = data.target_code;
                 let rate = data.conversion_rate;
 
-                let baseEl = $('<h5>').text(`Base currency: ${base}`);
-                let targetEl = $('<h5>').text(`Target currency: ${target}`);
-                let rateEl = $('<h3>').text(`Conversion rate: ${rate}`);
+                let rateEl = $('<h3>').text(`Conversion rate: 1 ${base} = ${rate} ${target}`)
 
-                $('#exchange-results').append(baseEl, targetEl, rateEl);
+                $('#exchange-results').append(rateEl)
+
 
                 // Empty the previous search from the boxes
                     $('#base-input').val("");
@@ -69,7 +70,6 @@ $(function () {
                 return response.json();
             })
             .then(function (data) {
-                console.log(data)
 
                 // If statement: if the API returns 0 results for the searched country, tell the user there are no results
                 if (data.results == 0) {
