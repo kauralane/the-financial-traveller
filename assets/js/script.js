@@ -54,9 +54,10 @@ $('#exchange-results').empty();
 
         fetch(newsURL)
             .then(function (response) {
-                return response.json();
+                return response.json()
             })
             .then(function (data) {
+                console.log(data)
 
                 // If statement: if the API returns 0 results for the searched country, tell the user there are no results
                 if (data.results == 0) {

@@ -7,6 +7,9 @@
   <title>The Financial Traveller</title>
 
   <!-- Add Google Fonts links here once decided -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -16,7 +19,26 @@
   <link href="./assets/CSS/style.css" rel="stylesheet" />
 </head>
 
-<body>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#news">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exchange Rates</a>
+              </li>
+        </div>
+      </nav>
 
   <!-- Hero Section -->
   <div id="hero-section">
@@ -95,9 +117,9 @@
 
     </section>
 
-    <h3>Currency converter search: please select a currency from the drop-down menu</h3>
+<h3>Currency converter search: please select a currency from the drop-down menu</h3>
 
-    <br>
+<br>
 <label for="base-input">Convert from</label>
 <select name="currencies" id="base-input">
   <option value="" disabled selected>Select a currency</option>
@@ -265,10 +287,8 @@
   <option value="ZWL">Zimbabwean dollar</option>
 </select>
 
-    <br>
 <label for="target-input">Convert to</label>
 <select name="currencies" id="target-input">
-  <option value="" disabled selected>Select a currency</option>
   <option value="" disabled selected>Select a currency</option>
   <option value="AED">United Arab Emirates dirham</option>
   <option value="AFN">Afghan Afghani</option>
@@ -434,14 +454,15 @@
   <option value="ZWL">Zimbabwean dollar</option>
 </select>
 
-    <br>
-    <button id="currency-search-button">Get exchange rate</button>
-    <br>
-    <div id="exchange-results">
+<br>
+<button id="currency-search-button">Get exchange rate</button>
+<br>
+<div id="exchange-results">
 
-    </div>
+</div>
 
-  </section>
+</section>
+
 
   <!-- jQuery script -->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
