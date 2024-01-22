@@ -205,4 +205,9 @@ function saveNewsSearch() {
             })
         })
 
+$('#clear-history-btn').on('click', function () {
+    localStorage.clear();
+    $('#history').empty();
+})
+
 })
