@@ -11,7 +11,7 @@ h1, h3, h5 {
 }
 
 #hero-section {
-    padding: 250px 0;
+    padding: 150px 0;
     box-sizing: border-box;
   }
   
@@ -90,10 +90,11 @@ h1, h3, h5 {
         background-color: #f0f0f0;
         cursor: pointer;
       }
-      
+    
       #history button:hover, #search-button:hover {
         background-color: #817c7c;
       }
+      
       
       label {
         color: white;
