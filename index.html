@@ -18,8 +18,10 @@
   <!-- Custom CSS stylesheet -->
   <link href="./assets/CSS/style.css" rel="stylesheet" />
 </head>
-<!--Nav bar-->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +35,7 @@
                 <a class="nav-link" href="#news">News</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#currency">Exchange Rates</a>
+                <a class="nav-link" href="#">Exchange Rates</a>
               </li>
         </div>
       </nav>
@@ -42,10 +44,8 @@
   <div id="hero-section">
     <div id="hero-image"><img id="logo" src="./assets/images/Untitled design.png"></div>
     <h1>Discover Financial Opportunities Globally!</h1>
-    <form id="news-form">
     <input type="text" placeholder="England" id="search-input" />
     <button id="search-button">&#128269;</button>
-    </form>
   </div>
 
   <!--News Section -->
@@ -114,13 +114,23 @@
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+<<<<<<< HEAD
     </section>
 <section id="currency">
     <h3>Currency converter search: please select a currency from the drop-down menu</h3>
 
     <br>
 <label for="currencies">Convert from</label>
+=======
+<h3>Currency converter search: please select a currency from the drop-down menu</h3>
+
+<br>
+<label for="base-input">Convert from</label>
+>>>>>>> c46b0c95509613ce7daa3479f19eb2313e680987
 <select name="currencies" id="base-input">
   <option value="" disabled selected>Select a currency</option>
   <option value="AED">United Arab Emirates dirham</option>
@@ -287,8 +297,8 @@
   <option value="ZWL">Zimbabwean dollar</option>
 </select>
 
-    <br>
-<label for="currencies">Convert to</label>
+<br>
+<label for="target-input">Convert to</label>
 <select name="currencies" id="target-input">
   <option value="" disabled selected>Select a currency</option>
   <option value="" disabled selected>Select a currency</option>
@@ -456,14 +466,15 @@
   <option value="ZWL">Zimbabwean dollar</option>
 </select>
 
-    <br>
-    <button id="currency-search-button">Get exchange rate</button>
-    <br>
-    <div id="exchange-results">
+<br>
+<button id="currency-search-button">Get exchange rate</button>
+<br>
+<div id="exchange-results">
 
-    </div>
+</div>
 
-  </section>
+</section>
+
 
   <!-- jQuery script -->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
