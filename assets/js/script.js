@@ -1,70 +1,209 @@
-const fetchdata = function() {
-  const apiKeyEx = "c7d648abed88eaf4eb03b49fc2186e8b";
-  const apiBaseURLEx = `http://api.exchangeratesapi.io/v1/2018-02-12?access_key=${apiKeyEx}`;
-  
-  fetch(apiBaseURLEx)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data)
-          })
-          
-        }
-
-$('#fetchButtonContainer').append('<button>').attr('id', 'fetchbutton')
-let buttonfetch = $('#fetchbutton')
-buttonfetch.on('click', fetchdata);
-
-
-
-
 $(function () {
 
-const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba"
+// Billy previous API
+    // const apiKeyEx = "8d6403f7b11515b6add06ccb75af36f5";
+    // const apiBaseURLEx = "https://api.exchangeratesapi.io/v1/";
 
-// Fake user input - this will be linked to the input element on the HTML file later
-const userInput = 'gb'
 
-// Base URL with language 
-    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_3661478808829817c896e863d91b2c1dd0dba&q=pizza`
+    // LAURA CURRENCY API - please change if needed; just so that we technically have a second API (in case something goes wrong!)
 
-// Fetch method
-    fetch(newsBaseURL)
-        .then(function (response) {
-            return response.json();
+    // To note - this API gives 1500 fetches total 
+    const exAPIKey = "1569a418148c4ece3affae5f"
+
+    function getExchangeRate() {
+
+    let baseCurrency = $('#base-input').val().trim();
+    let targetCurrency = $('#target-input').val().trim();
+    const exURL = `https://v6.exchangerate-api.com/v6/${exAPIKey}/pair/${baseCurrency}/${targetCurrency}`;
+
+                fetch(exURL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data)
+                
+                let base = data.base_code;
+                let target = data.target_code;
+                let rate = data.conversion_rate;
+
+                let baseEl = $('<h5>').text(`Base currency: ${base}`)
+                let targetEl = $('<h5>').text(`Target currency: ${target}`)
+                let rateEl = $('<h3>').text(`Conversion rate: ${rate}`)
+
+                $('#exchange-results').append(baseEl, targetEl, rateEl)
+
+                // Empty the previous search from the boxes
+                    $('#base-input').val("");
+                    $('#target-input').val("");
+
+                })
+            }
+
+    $('#currency-search-button').on('click', function() {
+        getExchangeRate()
+    })
+
+
+
+    // NEWS API CODE - LK
+    const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba";
+
+    // render previous search history buttons from local storage upon opening page
+    renderHistory();
+
+    // On-click function for the search button
+    $('#search-button').on('click', function () {
+        fetchNews();
+    })
+
+    // Fetch function which incorporates user search
+    function fetchNews() {
+        let userInput = $('#search-input').val().trim();
+
+        // Base URL with language, category (business), and limit on number of articles
+        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`
+
+        fetch(newsURL)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data)
+
+                // If statement: if the API returns 0 results for the searched country, tell the user there are no results
+                if (data.results == 0) {
+                    for (let i = 0; i < 3; i++) {
+                        $(`#title-${i}`).text('No current news')
+                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg")
+                        $(`#description-${i}`).text('Why not try searching a different country?')
+                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank')
+                    }
+                }
+
+                else {
+
+        // Save search history function
+                    saveNewsSearch();
+
+                    // For loop to render each article to its corresponding card
+                    for (let i = 0; i < 3; i++) {
+
+                        // Get the title
+                        let title = data.results[i].title
+
+                        // If the article doesn't have an image URL, use a placeholder image
+                        if (!data.results[i].image_url) {
+                            let img = "./assets/images/no-news-placeholder.jpeg"
+                            $(`#image-${i}`).attr('src', img)
+                        } else {
+                            let img = data.results[i].image_url
+                            $(`#image-${i}`).attr('src', img)
+                        }
+
+                        // Get the description
+                        let description = data.results[i].description
+
+                        // Get the full article link
+                        let link = data.results[i].link
+
+                        // Render the title, description and link
+                        $(`#title-${i}`).text(title)
+                        $(`#description-${i}`).text(description)
+                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+
+                        // Clear out the user's search text from the search box
+                        $('#search-input').val("")
+                    }
+                }
+
+            })
+
+    }
+
+function saveNewsSearch() {
+    let userInput = $('#search-input').val().trim();
+    if (userInput !== "") {
+        let countryButton = $('<button>').text(userInput).addClass('countryButton').data('countryName', userInput);
+        $('#history').append(countryButton);
+
+        let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
+        countriesArray.push(userInput)
+
+        localStorage.setItem('countries', JSON.stringify(countriesArray))
+    }
+}
+
+    function renderHistory() {
+        let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
+        let lastFive = countriesArray.slice(-5);
+        lastFive.forEach(country => {
+            let countryButton = $('<button>').text(country).addClass('countryButton').data('countryName', country);
+            $('#history').append(countryButton);
+        
         })
-        .then(function (data) {
-            console.log(data)
+    }
 
-// Will insert for loop here later, to render articles from first 5 results
-            
-// Article titles, images, descriptions, links
-            console.log(data.results[0].title)
-            let title = data.results[0].title
-            
-// Image element not working yet
-            console.log(data.results[0].image_URL)
-            let img = data.results[0].image_URL
 
-            console.log(data.results[0].description)
-            let description = data.results[0].description
+    // REPEATED CODE BUT WITH SAVED HISTORY COUNTRY; VERY WET, NEEDS TO BE DRIED
 
-            console.log(data.results[0].link)
-            let link = data.results[0].link
+    // On clicking history button, display results for that country
+    $('#history').on('click', '.countryButton', function () {
+        let countryName = $(this).data('countryName')
 
-        let titleEl = $('<h2>').text(title)
-        let imgEl = $('<img>').attr('src', img)
-        let pEl = $('<p>').text(description)
-        let linkEl = $('<a>').attr('href', link).text('Link to full article')
+        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${countryName}&language=en&category=business&size=3`
 
-        // append news information to the news section of document
-        $('#news-section').append(titleEl, imgEl, pEl, linkEl)
-            
-            // }
+        fetch(newsURL)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data)
 
+                // If statement: if the API returns 0 results for the searched country, tell the user there are no results
+                if (data.results == 0) {
+                    for (let i = 0; i < 3; i++) {
+                        $(`#title-${i}`).text('No current news')
+                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg")
+                        $(`#description-${i}`).text('Why not try searching a different country?')
+                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank')
+                    }
+                }
+
+                else {
+
+                    // For loop to render each article to its corresponding card
+                    for (let i = 0; i < 3; i++) {
+
+                        // Get the title
+                        let title = data.results[i].title
+
+                        // If the article doesn't have an image URL, use a placeholder image
+                        if (!data.results[i].image_url) {
+                            let img = "./assets/images/no-news-placeholder.jpeg"
+                            $(`#image-${i}`).attr('src', img)
+                        } else {
+                            let img = data.results[i].image_url
+                            $(`#image-${i}`).attr('src', img)
+                        }
+
+                        // Get the description
+                        let description = data.results[i].description
+
+                        // Get the full article link
+                        let link = data.results[i].link
+
+                        // Render the title, description and link
+                        $(`#title-${i}`).text(title)
+                        $(`#description-${i}`).text(description)
+                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+
+                        // Clear out the user's search text from the search box
+                        $('#search-input').val("")
+                    }
+                }
+
+            })
         })
-      })
 
-
-
+})
