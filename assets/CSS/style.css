@@ -2,6 +2,10 @@ body {
     background: linear-gradient(to right, #000000, #000080, #336699);
     margin: 0;
     text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+h1, h3, h5 {
     color: white;
     font-weight: bold;
 }
@@ -91,4 +95,12 @@ body {
         background-color: #817c7c;
       }
       
-      
+      label {
+        color: white;
+      }
+
+      select, option {
+            max-width: 40%;
+            white-space: normal;
+            text-overflow: ellipsis;
+      }
