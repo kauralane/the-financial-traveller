@@ -1,13 +1,5 @@
 $(function () {
 
-// Billy previous API
-    // const apiKeyEx = "8d6403f7b11515b6add06ccb75af36f5";
-    // const apiBaseURLEx = "https://api.exchangeratesapi.io/v1/";
-
-
-
-    // LAURA CURRENCY API - please change if needed; just so that we technically have a second API (in case something goes wrong!)
-
     // To note - this API gives 1500 fetches total 
     const exAPIKey = "1569a418148c4ece3affae5f";
 
@@ -33,11 +25,6 @@ $('#exchange-results').empty();
 
                 $('#exchange-results').append(rateEl)
 
-
-                // Empty the previous search from the boxes
-                    $('#base-input').val("");
-                    $('#target-input').val("");
-
                 })
             }
 
@@ -54,7 +41,7 @@ $('#exchange-results').empty();
     renderHistory();
 
     // On-click function for the search button
-    $('#search-input').on('click', function () {
+    $('#search-button').on('click', function () {
         fetchNews();
     })
 
