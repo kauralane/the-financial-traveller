@@ -9,7 +9,7 @@ $(function () {
     // LAURA CURRENCY API - please change if needed; just so that we technically have a second API (in case something goes wrong!)
 
     // To note - this API gives 1500 fetches total 
-    const exAPIKey = "1569a418148c4ece3affae5f"
+    const exAPIKey = "1569a418148c4ece3affae5f";
 
     function getExchangeRate() {
 
@@ -33,6 +33,7 @@ $('#exchange-results').empty();
 
                 $('#exchange-results').append(rateEl)
 
+
                 // Empty the previous search from the boxes
                     $('#base-input').val("");
                     $('#target-input').val("");
@@ -41,7 +42,7 @@ $('#exchange-results').empty();
             }
 
     $('#currency-search-button').on('click', function() {
-        getExchangeRate()
+        getExchangeRate();
     })
 
 
@@ -53,7 +54,7 @@ $('#exchange-results').empty();
     renderHistory();
 
     // On-click function for the search button
-    $('#search-button').on('click', function () {
+    $('#search-input').on('click', function () {
         fetchNews();
     })
 
@@ -62,7 +63,7 @@ $('#exchange-results').empty();
         let userInput = $('#search-input').val().trim();
 
         // Base URL with language, category (business), and limit on number of articles
-        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`
+        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`;
 
         fetch(newsURL)
             .then(function (response) {
@@ -73,10 +74,10 @@ $('#exchange-results').empty();
                 // If statement: if the API returns 0 results for the searched country, tell the user there are no results
                 if (data.results == 0) {
                     for (let i = 0; i < 3; i++) {
-                        $(`#title-${i}`).text('No current news')
-                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg")
-                        $(`#description-${i}`).text('Why not try searching a different country?')
-                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank')
+                        $(`#title-${i}`).text('No current news');
+                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg").addClass('news-image');
+                        $(`#description-${i}`).text('Why not try searching a different country?');
+                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank');
                     }
                 }
 
@@ -89,30 +90,30 @@ $('#exchange-results').empty();
                     for (let i = 0; i < 3; i++) {
 
                         // Get the title
-                        let title = data.results[i].title
+                        let title = data.results[i].title;
 
                         // If the article doesn't have an image URL, use a placeholder image
                         if (!data.results[i].image_url) {
                             let img = "./assets/images/no-news-placeholder.jpeg"
-                            $(`#image-${i}`).attr('src', img)
+                            $(`#image-${i}`).attr('src', img).addClass('news-image');
                         } else {
                             let img = data.results[i].image_url
-                            $(`#image-${i}`).attr('src', img)
+                            $(`#image-${i}`).attr('src', img).addClass('news-image');
                         }
 
                         // Get the description
-                        let description = data.results[i].description
+                        let description = data.results[i].description;
 
                         // Get the full article link
-                        let link = data.results[i].link
+                        let link = data.results[i].link;
 
                         // Render the title, description and link
-                        $(`#title-${i}`).text(title)
-                        $(`#description-${i}`).text(description)
-                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+                        $(`#title-${i}`).text(title);
+                        $(`#description-${i}`).text(description);
+                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank');
 
                         // Clear out the user's search text from the search box
-                        $('#search-input').val("")
+                        $('#search-input').val("");
                     }
                 }
 
@@ -127,9 +128,9 @@ function saveNewsSearch() {
         $('#history').append(countryButton);
 
         let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
-        countriesArray.push(userInput)
+        countriesArray.push(userInput);
 
-        localStorage.setItem('countries', JSON.stringify(countriesArray))
+        localStorage.setItem('countries', JSON.stringify(countriesArray));
     }
 }
 
@@ -148,9 +149,9 @@ function saveNewsSearch() {
 
     // On clicking history button, display results for that country
     $('#history').on('click', '.countryButton', function () {
-        let countryName = $(this).data('countryName')
+        let countryName = $(this).data('countryName');
 
-        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${countryName}&language=en&category=business&size=3`
+        const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${countryName}&language=en&category=business&size=3`;
 
         fetch(newsURL)
             .then(function (response) {
@@ -161,10 +162,10 @@ function saveNewsSearch() {
                 // If statement: if the API returns 0 results for the searched country, tell the user there are no results
                 if (data.results == 0) {
                     for (let i = 0; i < 3; i++) {
-                        $(`#title-${i}`).text('No current news')
-                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg")
-                        $(`#description-${i}`).text('Why not try searching a different country?')
-                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank')
+                        $(`#title-${i}`).text('No current news');
+                        $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg").addClass('news-image');
+                        $(`#description-${i}`).text('Why not try searching a different country?');
+                        $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank');
                     }
                 }
 
@@ -174,30 +175,30 @@ function saveNewsSearch() {
                     for (let i = 0; i < 3; i++) {
 
                         // Get the title
-                        let title = data.results[i].title
+                        let title = data.results[i].title;
 
                         // If the article doesn't have an image URL, use a placeholder image
                         if (!data.results[i].image_url) {
                             let img = "./assets/images/no-news-placeholder.jpeg"
-                            $(`#image-${i}`).attr('src', img)
+                            $(`#image-${i}`).attr('src', img).addClass('news-image');
                         } else {
-                            let img = data.results[i].image_url
-                            $(`#image-${i}`).attr('src', img)
+                            let img = data.results[i].image_url;
+                            $(`#image-${i}`).attr('src', img).addClass('news-image');
                         }
 
                         // Get the description
-                        let description = data.results[i].description
+                        let description = data.results[i].description;
 
                         // Get the full article link
-                        let link = data.results[i].link
+                        let link = data.results[i].link;
 
                         // Render the title, description and link
-                        $(`#title-${i}`).text(title)
-                        $(`#description-${i}`).text(description)
-                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank')
+                        $(`#title-${i}`).text(title);
+                        $(`#description-${i}`).text(description);
+                        $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank');
 
                         // Clear out the user's search text from the search box
-                        $('#search-input').val("")
+                        $('#search-input').val("");
                     }
                 }
 
