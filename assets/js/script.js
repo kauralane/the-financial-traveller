@@ -1,18 +1,33 @@
-$(document).ready(function () {
-  const apiKeyEx = "8d6403f7b11515b6add06ccb75af36f5";
-  const apiBaseURLEx = "https://api.exchangeratesapi.io/v1/";
-  console.log('test')
-})
+const fetchdata = function() {
+  const apiKeyEx = "c7d648abed88eaf4eb03b49fc2186e8b";
+  const apiBaseURLEx = `http://api.exchangeratesapi.io/v1/2018-02-12?access_key=${apiKeyEx}`;
+  
+  fetch(apiBaseURLEx)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+          })
+          
+        }
+
+$('#fetchButtonContainer').append('<button>').attr('id', 'fetchbutton')
+let buttonfetch = $('#fetchbutton')
+buttonfetch.on('click', fetchdata);
+
+
+
 
 $(function () {
 
 const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba"
 
 // Fake user input - this will be linked to the input element on the HTML file later
-let userInput = 'gb'
+const userInput = 'gb'
 
 // Base URL with language 
-    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&q=economy&language=en&category=business,politics,crime,technology,domestic&country=${userInput}`
+    const newsBaseURL = `https://newsdata.io/api/1/news?apikey=pub_3661478808829817c896e863d91b2c1dd0dba&q=pizza`
 
 // Fetch method
     fetch(newsBaseURL)
@@ -49,8 +64,7 @@ let userInput = 'gb'
             // }
 
         })
-
-})
+      })
 
 
 
