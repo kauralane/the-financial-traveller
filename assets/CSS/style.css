@@ -1,107 +1,119 @@
 body {
-    background: linear-gradient(to right, #000000, #000080, #336699);
-    margin: 0;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
+  background: linear-gradient(to right, #000000, #000080, #336699);
+  margin: 0;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  color: white;
 }
 
-h1, h3, h5 {
-    color: white;
-    font-weight: bold;
+.nav-link {
+  color: white !important;
+}
+
+h1,
+h3,
+h5 {
+  color: white;
+  font-weight: bold;
 }
 
 #hero-section {
-    padding: 150px 0;
-    box-sizing: border-box;
-  }
-  
-#logo {
-    height: 400px;
-    width: 400px;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  padding: 150px 0;
+  box-sizing: border-box;
 }
 
-  .hero h1 {
-    margin: 0;
-  }
+#logo {
+  height: 400px;
+  width: 400px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.hero h1 {
+  margin: 0;
+}
 
 #prev-search {
-    text-align: left;
+  text-align: left;
+}
+
+#currency {
+  padding: 200px;
 }
 
 .carousel {
-    position: relative;
-    width: 80%; /* Set the desired width of the carousel */
-    margin: auto; /* Center the carousel */
+  position: relative;
+  width: 80%; /* Set the desired width of the carousel */
+  margin: auto; /* Center the carousel */
 }
 
-.carousel-control-prev, .carousel-control-next {
-    width: 10%; /* Sets the width of the controls */
-    position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%; /* Sets the width of the controls */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
 }
 
 .carousel-control-prev {
-    left: -15%; /* Adjust the left position for the previous control */
+  left: -15%; /* Adjust the left position for the previous control */
 }
 
 .carousel-control-next {
-    right: -15%; /* Adjust the right position for the next control */
+  right: -15%; /* Adjust the right position for the next control */
 }
 
 .cards {
-    width: 50rem;
-    height: 40rem;
+  width: 50rem;
+  height: 40rem;
 }
 
 #search-input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    /* Add more styles as needed */
-  }
-  
-  /* Optional: Add styles for focus state */
-  #searchInput:focus {
-    outline: none;
-  }
-  
-  #search-button {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-      
-      
-      #history {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      
-      #history button {
-        padding: 5px;
-        margin: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f0f0f0;
-        cursor: pointer;
-      }
-    
-      #history button:hover, #search-button:hover {
-        background-color: #817c7c;
-      }
-      
-      
-      label {
-        color: white;
-      }
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  /* Add more styles as needed */
+}
 
-      select, option {
-            max-width: 40%;
-            white-space: normal;
-            text-overflow: ellipsis;
-      }
+/* Optional: Add styles for focus state */
+#searchInput:focus {
+  outline: none;
+}
+
+#search-button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#history {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#history button {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+#history button:hover,
+#search-button:hover {
+  background-color: #817c7c;
+}
+
+label {
+  color: white;
+}
+
+select,
+option {
+  max-width: 40%;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
