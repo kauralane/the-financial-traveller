@@ -7,7 +7,7 @@ body {
 }
 
 .custom-navbar .navbar-nav .nav-link,
-.custom-navbar .navbar-toggler-icon {
+.navbar-toggler-icon {
   color: white !important;
 }
 
@@ -98,10 +98,10 @@ h5 {
   font-size: 16px;
 }
 
-#history {
+/* #history {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 #history button {
   padding: 5px;
