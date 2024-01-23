@@ -11,8 +11,8 @@ body {
   color: white !important;
 }
 
-.navbar-toggler-icon {
-  background-color: white;
+.custom-navbar .navbar-toggler {
+  border-color: white !important;
 }
 
 
