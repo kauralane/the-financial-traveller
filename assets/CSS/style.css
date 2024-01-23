@@ -10,8 +10,9 @@ body {
   color: white !important;
 }
 
-.navbar-toggler {
-  background-color: white !important;
+.custom-navbar .navbar-toggler {
+  border-color: white !important;
+
 }
 
 h1,
