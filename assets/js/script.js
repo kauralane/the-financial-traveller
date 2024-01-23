@@ -130,7 +130,7 @@ $(function () {
         }
     }
 
-    // Function to render any search history from local storage to the page
+    // Function to render last five search items from local storage to the page
     function renderHistory() {
         let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
         let lastFive = countriesArray.slice(-5);
@@ -154,12 +154,11 @@ $(function () {
             .then(function (data) {
                 renderNews(data);
     })
+    })
 
 // Event listener to clear local storage & search history buttons
     $('#clear-history-btn').on('click', function () {
         localStorage.clear();
         $('#history').empty();
     })
-
-})
 })
