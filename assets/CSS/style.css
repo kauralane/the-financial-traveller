@@ -23,7 +23,7 @@ h5 {
 }
 
 #hero-section {
-  padding: 150px 0;
+  padding: 0 0 50px 0;
   box-sizing: border-box;
 }
 
@@ -44,6 +44,12 @@ h5 {
 
 #news {
   text-align: center;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+#news h3 {
+  padding-bottom: 10px;
 }
 
 #currency {
@@ -126,4 +132,12 @@ option {
   max-width: 40%;
   white-space: normal;
   text-overflow: ellipsis;
+}
+
+#currency-search-button {
+  margin: 20px 0 20px 0;
+}
+
+#clear-history-button {
+  margin-bottom: 20px;
 }
