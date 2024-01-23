@@ -46,6 +46,7 @@ h5 {
 #news {
   text-align: center;
   padding-bottom: 50px;
+  padding-top: 20px;
 }
 
 #news h3 {
@@ -135,5 +136,9 @@ option {
 }
 
 #currency-search-button {
-  margin-top: 20px;
+  margin: 20px 0 20px 0;
+}
+
+#clear-history-button {
+  margin-bottom: 20px;
 }
