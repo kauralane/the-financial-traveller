@@ -51,7 +51,7 @@ $(function () {
 
     // On-click function for the search button
     $('#search-button').on('click', function () {
-        fetchNews()
+        fetchNews();
     })
 
     // Fetch function which incorporates user search
