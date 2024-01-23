@@ -161,5 +161,4 @@ $(function () {
         localStorage.clear();
         $('#history').empty();
     })
-
 })

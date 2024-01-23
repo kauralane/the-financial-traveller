@@ -10,6 +10,11 @@ body {
   color: white !important;
 }
 
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(1) !important;
+}
+
+
 .custom-navbar .navbar-toggler {
   border-color: white !important;
 }
@@ -87,7 +92,6 @@ h5 {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 50%;
   /* Add more styles as needed */
 }
 
