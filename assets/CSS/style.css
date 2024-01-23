@@ -11,6 +11,10 @@ body {
   color: white !important;
 }
 
+.navbar-toggler-icon {
+  background-color: white;
+}
+
 
 h1,
 h3,
@@ -37,6 +41,10 @@ h5 {
 
 #prev-search {
   text-align: left;
+}
+
+#news {
+  text-align: center;
 }
 
 #currency {
