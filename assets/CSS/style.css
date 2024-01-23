@@ -6,15 +6,14 @@ body {
   color: white;
 }
 
-.custom-navbar .navbar-nav .nav-link,
-.navbar-toggler-icon {
+.custom-navbar .navbar-nav .nav-link {
   color: white !important;
 }
 
-.navbar-toggler-icon {
-  background-color: white;
-}
+.custom-navbar .navbar-toggler {
+  border-color: white !important;
 
+}
 
 h1,
 h3,
