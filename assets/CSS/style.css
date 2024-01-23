@@ -12,10 +12,9 @@ body {
 
 .custom-navbar .navbar-toggler {
   border-color: white !important;
-
 }
 
-h1,
+h1
 h3,
 h5 {
   color: white;
@@ -138,6 +137,6 @@ option {
   margin: 20px 0 20px 0;
 }
 
-#clear-history-button {
+#clear-history-btn {
   margin-bottom: 20px;
 }
