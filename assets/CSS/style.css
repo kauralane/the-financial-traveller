@@ -85,9 +85,17 @@ h5 {
 }
 
 .cards {
-  width: 50rem;
-  height: 40rem;
+  width: 400px !important; 
+  height: 400px !important; 
+  overflow: hidden; /* Hide overflow content */
 }
+
+.cards p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 .news-story-img {
   height: 150px;
