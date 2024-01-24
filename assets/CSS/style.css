@@ -71,7 +71,7 @@ h5 {
 .carousel-control-next {
   width: 10%;
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 50%; 
   transform: translateY(-50%);
 }
 
