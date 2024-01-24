@@ -27,11 +27,6 @@ $(function () {
                 let rateEl = $('<h3>').text(`Conversion rate: 1 ${base} = ${rate} ${target}`)
 
                 $('#exchange-results').append(rateEl)
-
-                // Empty the user's previous search from the boxes
-                $('#base-input').val("");
-                $('#target-input').val("");
-
             })
     }
 
@@ -39,9 +34,6 @@ $(function () {
     $('#currency-search-button').on('click', function () {
         getExchangeRate();
     })
-
-
-
     
     // News API (Laura)
     const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba";
@@ -120,13 +112,15 @@ $(function () {
     function saveNewsSearch() {
         let userInput = $('#search-input').val().trim();
         if (userInput !== "") {
-            let countryButton = $('<button>').text(userInput).addClass('countryButton').data('countryName', userInput);
-            $('#history').append(countryButton);
+            if (!$(`.countryButton:contains('${userInput}')`).length) {
+                let countryButton = $('<button>').text(userInput).addClass('countryButton').data('countryName', userInput);
+                $('#history').append(countryButton);
 
-            let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
-            countriesArray.push(userInput);
+                let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
+                countriesArray.push(userInput);
 
-            localStorage.setItem('countries', JSON.stringify(countriesArray));
+                localStorage.setItem('countries', JSON.stringify(countriesArray));
+            }
         }
     }
 
