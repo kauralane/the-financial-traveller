@@ -89,6 +89,13 @@ h5 {
   height: 40rem;
 }
 
+.news-story-img {
+  height: 150px;
+  width: 100%; 
+  object-fit: contain; 
+}
+
+
 #search-input {
   width: 210px;
   padding: 5px;
