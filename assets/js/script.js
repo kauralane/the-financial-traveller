@@ -29,8 +29,8 @@ $(function () {
                 $('#exchange-results').append(rateEl)
 
                 // Empty the user's previous search from the boxes
-                $('#base-input').val("");
-                $('#target-input').val("");
+                // $('#base-input').val("");
+                // $('#target-input').val("");
 
             })
     }
@@ -111,7 +111,7 @@ $(function () {
                 $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank');
 
                 // Clear out the user's search text from the search box
-                $('#search-input').val("");
+                // $('#search-input').val("");
             }
         }
     }
