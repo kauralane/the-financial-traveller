@@ -120,13 +120,15 @@ $(function () {
     function saveNewsSearch() {
         let userInput = $('#search-input').val().trim();
         if (userInput !== "") {
-            let countryButton = $('<button>').text(userInput).addClass('countryButton').data('countryName', userInput);
-            $('#history').append(countryButton);
+            if (!$(`.countryButton:contains('${userInput}')`).length) {
+                let countryButton = $('<button>').text(userInput).addClass('countryButton').data('countryName', userInput);
+                $('#history').append(countryButton);
 
-            let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
-            countriesArray.push(userInput);
+                let countriesArray = JSON.parse(localStorage.getItem('countries')) || [];
+                countriesArray.push(userInput);
 
-            localStorage.setItem('countries', JSON.stringify(countriesArray));
+                localStorage.setItem('countries', JSON.stringify(countriesArray));
+            }
         }
     }
 
