@@ -27,11 +27,6 @@ $(function () {
                 let rateEl = $('<h3>').text(`Conversion rate: 1 ${base} = ${rate} ${target}`)
 
                 $('#exchange-results').append(rateEl)
-
-                // Empty the user's previous search from the boxes
-                // $('#base-input').val("");
-                // $('#target-input').val("");
-
             })
     }
 
@@ -39,9 +34,6 @@ $(function () {
     $('#currency-search-button').on('click', function () {
         getExchangeRate();
     })
-
-
-
     
     // News API (Laura)
     const newsAPIKey = "3661478808829817c896e863d91b2c1dd0dba";
@@ -111,7 +103,7 @@ $(function () {
                 $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank');
 
                 // Clear out the user's search text from the search box
-                // $('#search-input').val("");
+                $('#search-input').val("");
             }
         }
     }
