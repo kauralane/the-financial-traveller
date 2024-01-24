@@ -132,8 +132,13 @@ option {
   text-overflow: ellipsis;
 } */
 
-.currency-input {
-  width: 100%;
+.label-title {
+  padding: 10px;
+}
+
+#base-input, #target-input {
+  width: 20%;
+  text-align: center;
   box-sizing: border-box;
   margin-bottom: 10px;
   padding: 5px;
