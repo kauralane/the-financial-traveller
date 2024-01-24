@@ -31,9 +31,9 @@ Application deployed at the live GitHub URL:
 
 ## Badges
 
-![badmath](https://img.shields.io/badge/Javascript--blue)
-![badmath](https://img.shields.io/badge/HTML--orange)
-![badmath](https://img.shields.io/badge/CSS--purple)
+![badmath](https://img.shields.io/badge/Javascript-19.7-blue)
+![badmath](https://img.shields.io/badge/HTML-73.2-orange)
+![badmath](https://img.shields.io/badge/CSS-7.1-purple)
 
 ## Features
 
