@@ -119,6 +119,7 @@
     </div>
   </section>
   <section id="exchange">
+    <div class="currency-container">
     <h3>Currency Convertor</h3>
     <label for="base-input">Convert from</label>
     <select name="currencies" id="base-input">
@@ -287,6 +288,8 @@
       <option value="ZWL">Zimbabwean dollar</option>
     </select>
 
+    <img src="./assets/images/Currency-converter-img.png" alt="Currency Convertor Image" class="currency-image">
+
     <label for="target-input">Convert to</label>
     <select name="currencies" id="target-input">
       <option value="" disabled selected>Select a currency</option>
@@ -453,8 +456,8 @@
       <option value="ZMW">Zambian kwacha</option>
       <option value="ZWL">Zimbabwean dollar</option>
     </select>
-
-    <br>
+    </div>
+    
     <button id="currency-search-button" class="btn btn-primary py-10">Get exchange rate</button>
     <div id="exchange-results">
     </div>
