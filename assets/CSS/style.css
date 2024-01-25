@@ -6,6 +6,10 @@ body {
   color: white;
 }
 
+#navbar-brand {
+  color: white;
+}
+
 .custom-navbar .navbar-nav .nav-link {
   color: white !important;
   font-family: "Playfair Display", serif;
