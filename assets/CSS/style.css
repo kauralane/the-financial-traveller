@@ -85,7 +85,7 @@ h5 {
 }
 
 .cards {
-  height: 600px !important; 
+  height: 350px !important; 
   overflow: hidden; /* Hide overflow content */
   background: transparent;
   border: none;
@@ -148,13 +148,6 @@ h5 {
 label {
   color: white;
 }
-
-/* select,
-option {
-  max-width: 40%;
-  white-space: normal;
-  text-overflow: ellipsis;
-} */
 
 .label-title {
   padding: 10px;
