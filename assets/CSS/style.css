@@ -85,8 +85,7 @@ h5 {
 }
 
 .cards {
-  width: 400px !important; 
-  height: 400px !important; 
+  height: 500px !important; 
   overflow: hidden; /* Hide overflow content */
 }
 
@@ -98,7 +97,8 @@ h5 {
 
 
 .news-story-img {
-  height: 150px;
+  padding-top: 15px;
+  height: 200px;
   width: 100%; 
   object-fit: contain; 
 }
@@ -181,4 +181,8 @@ option {
 
 #clear-history-btn {
   margin-bottom: 20px;
+}
+
+.news-location-heading {
+  padding-bottom: 5px;
 }

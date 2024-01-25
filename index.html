@@ -36,26 +36,31 @@
               <li class="nav-item">
                 <a class="nav-link" href="#exchange">Exchange Rates</a>
               </li>
+              </ul>
         </div>
-      </nav>
+    </div>
+    </nav>
     </div>
 
   <!-- Hero Section -->
   <div id="hero-section">
-    <div id="hero-image"><img id="logo" src="./assets/images/Untitled design.png"></div>
-    <h1>Discover Global Financial Information!</h1>
+    <div id="hero-image"><img id="logo" src="./assets/images/world-money-logo.png"></div>
+    <h1>Discover Global Financial Information</h1>
     <input type="text" placeholder="Search for a city or country" id="search-input" />
     <button id="search-button">&#128269;</button>
   </div>
 
   <!--News Section -->
   <section id="news-search">
-  <h3 id="prev-search" class="text-center">Previous searches:</h3>
+  <h4 id="prev-search" class="text-center">Previous searches:</h4>
   <div id="history" class="text-center">
   </div>
   <button id="clear-history-btn" class="btn btn-primary">Clear Search History</button>
 
   <section id="news">
+    <div id="news-heading">
+      <!-- jQuery titles to go in here -->
+    </div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-12">
@@ -66,13 +71,13 @@
               <div class="carousel-item active">
                 <div class="cards card h-100 mx-auto col-sm-12 col-md-6 col-lg-4"
                   style="width: 100%; max-width: 65rem;">
-                  <img class="news-story-img" id="image-0" alt="" src="./assets/images/no-news-placeholder.jpeg">
+                  <img class="news-story-img" id="image-0" alt="placeholder image" src="./assets/images/no-news-placeholder.jpeg">
 
                   <div class="card-body">
                     <h5 id="title-0" class="card-title">Search for a city or country above to see the latest economic
                       news</h5>
                     <p class="card-text" id="description-0"></p>
-                    <a href="#search-input" id="link-0" class="btn btn-primary">Check it out!</a>
+                    <a href="#search-input" id="link-0" class="btn btn-primary">Go to search</a>
                   </div>
                 </div>
               </div>
@@ -81,12 +86,12 @@
               <div class="carousel-item">
                 <div id="card2" class="cards card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4"
                   style="width: 100%; max-width: 65rem;">
-                  <img class="news-story-img" alt="" id="image-1" src="./assets/images/city.jpeg">
+                  <img class="news-story-img" alt="placeholder image" id="image-1" src="./assets/images/city.jpeg">
                   <div class="card-body">
                     <h5 id="title-1" class="card-title">Search for a city or country above to see the latest economic
                       news</h5>
                     <p id="description-1" class="card-text"></p>
-                    <a href="#search-input" id="link-1" class="btn btn-primary">Check it out!</a>
+                    <a href="#search-input" id="link-1" class="btn btn-primary">Go to search</a>
                   </div>
                 </div>
               </div>
@@ -95,13 +100,13 @@
               <div class="carousel-item">
                 <div id="card3" class="cards card h-100 mx-auto col-sm-12 col-md-6 col-lg-4"
                   style="width: 100%; max-width: 65rem;">
-                  <img id="image-2" alt="Placeholder Image" class="news-story-img" alt=""
+                  <img id="image-2" alt="placeholder image" class="news-story-img"
                     src="./assets/images/trading-image.jpeg">
                   <div class="card-body">
                     <h5 id="title-2" class="card-title">Search for a city or country above to see the latest economic
                       news</h5>
                     <p id="description-2" class="card-text"></p>
-                    <a href="#search-input" id="link-2" class="btn btn-primary">Check it out!</a>
+                    <a href="#search-input" id="link-2" class="btn btn-primary">Go to search</a>
                   </div>
                 </div>
               </div>
@@ -119,6 +124,8 @@
       </div>
     </div>
   </section>
+  </section>
+
   <section id="exchange">
     <div class="currency-container">
     <h3>Currency Convertor</h3>
