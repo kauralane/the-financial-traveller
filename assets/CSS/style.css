@@ -9,12 +9,20 @@ body {
 
 #navbar-brand {
   color: white;
+  font-family: 'Roboto Slab', serif;
+  font-size: larger;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
 }
 
 .custom-navbar .navbar-nav .nav-link {
   /* styling with !important to override any bootstrap styling we didn't want */
   color: white !important;
   font-family: "Playfair Display", serif;
+  font-weight: 900 !important;
+  font-size: medium;
 }
 
 .custom-navbar .navbar-toggler-icon {
@@ -116,12 +124,12 @@ h5 {
   font-weight: bolder;
 }
 
-
 .news-story-img {
   padding-top: 15px;
   height: 200px;
   width: 100%; 
   object-fit: contain; 
+  border-radius: 10px;
 }
 
 #search-input {
