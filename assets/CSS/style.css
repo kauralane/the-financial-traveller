@@ -106,7 +106,7 @@ h5 {
 }
 
 .cards {
-  height: 350px !important; 
+  height: 400px !important; 
   overflow: hidden; /* Hide overflow content */
   background: transparent;
   border: none;
