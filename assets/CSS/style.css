@@ -85,14 +85,22 @@ h5 {
 }
 
 .cards {
-  height: 500px !important; 
+  height: 600px !important; 
   overflow: hidden; /* Hide overflow content */
+  background: transparent;
+  border: none;
 }
 
 .cards p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: white;
+}
+
+.cards h5 {
+  color: white;
+  font-weight: bolder;
 }
 
 
