@@ -48,10 +48,15 @@ $(function () {
 
     // Fetch function which incorporates user search
         function fetchNews() {
+        $(`#news-heading`).empty();
         let userInput = $('#search-input').val().trim();
 
         // Base URL with language, category (business), and limit on number of articles
         const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`;
+
+        // Render a title to the page to tell user what location the news is from
+        let newsTitle = $('<h5>').text(`Showing business news from: ${userInput}`).addClass('news-location-heading');
+        $(`#news-heading`).prepend(newsTitle);
 
         fetch(newsURL)
             .then(function (response) {
@@ -68,10 +73,10 @@ $(function () {
         // If statement: if the API returns 0 results for the searched country, tell the user there are no results
         if (data.results == 0) {
             for (let i = 0; i < 3; i++) {
-                $(`#title-${i}`).text('No current news');
+                $(`#title-${i}`).text('Sorry, no available business news for this location');
                 $(`#image-${i}`).attr('src', "./assets/images/no-news-placeholder.jpeg").addClass('news-image');
-                $(`#description-${i}`).text('Why not try searching a different country?');
-                $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest economic news on the BBC website').attr('target', 'blank');
+                $(`#description-${i}`).text('Why not try searching a different location?');
+                $(`#link-${i}`).attr('href', 'https://www.bbc.co.uk/news/business/economy').text('Or, check out the latest global economic news on the BBC website').attr('target', 'blank');
             }
         }
 
@@ -87,6 +92,7 @@ $(function () {
                 let title = data.results[i].title;
 
                 // If the article doesn't have an image URL, use a placeholder image
+
                 if (!data.results[i].image_url) {
                     let img = "./assets/images/no-news-placeholder.jpeg"
                     $(`#image-${i}`).attr('src', img).addClass('news-image');
@@ -97,7 +103,7 @@ $(function () {
 
                 let description = data.results[i].description;
                 let link = data.results[i].link;
-
+                
                 $(`#title-${i}`).text(title);
                 $(`#description-${i}`).text(description);
                 $(`#link-${i}`).attr('href', link).text('Link to full article').attr('target', 'blank');
@@ -136,10 +142,17 @@ $(function () {
     }
 
 
-// Event listener for saved search button - targeting the value on the clicked button.
+// Event listener and fetch for saved search button - targeting the value on the clicked button.
     $('#history').on('click', '.countryButton', function () {
+
+        $(`#news-heading`).empty();
+
         let countryName = $(this).data('countryName');
         const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${countryName}&language=en&category=business&size=3`;
+
+    // Title to show where the news that's being displayed is coming from
+        let newsTitle = $('<h5>').text(`Showing business news from: ${countryName}`).addClass('news-location-heading');
+        $(`#news-heading`).prepend(newsTitle);
 
         fetch(newsURL)
             .then(function (response) {

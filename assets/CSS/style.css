@@ -182,3 +182,7 @@ option {
 #clear-history-btn {
   margin-bottom: 20px;
 }
+
+.news-location-heading {
+  padding-bottom: 5px;
+}
