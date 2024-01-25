@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(to right, #000000, #000080, #336699);
+  /* Add in a background gradient */
+  background: linear-gradient(to right, #000000, #000080, #336699); 
   margin: 0;
   text-align: center;
   font-family: "Playfair Display", serif;
@@ -17,6 +18,7 @@ h1 {
 }
 
 .custom-navbar .navbar-nav .nav-link {
+  /* styling with !important to override any bootstrap styling we didn't want */
   color: white !important;
   font-family: "Playfair Display", serif;
   font-weight: 900 !important;
@@ -24,6 +26,7 @@ h1 {
 }
 
 .custom-navbar .navbar-toggler-icon {
+  /* Invert the colour of the navbar toggler icon so it shows up better */
   filter: invert(1) !important;
 }
 
@@ -59,6 +62,7 @@ h5 {
 }
 
 #news, #news-search {
+  /* Center the news section elements */
   text-align: center;
   padding-bottom: 20px;
   padding-top: 20px;
@@ -102,10 +106,14 @@ h5 {
 }
 
 .cards {
-  height: 350px !important; 
+  height: 400px !important; 
   overflow: hidden; /* Hide overflow content */
   background: transparent;
   border: none;
+}
+
+.cards h5 {
+  text-overflow: ellipsis;
 }
 
 .cards p {
@@ -166,10 +174,12 @@ label {
 }
 
 .label-title {
+  /* Create some padding to separate the label from the select menu a bit */
   padding: 10px;
 }
 
 #base-input, #target-input {
+  /* styles the input boxes for the currencies */
   width: 200px;
   text-align: center;
   box-sizing: border-box;
@@ -181,6 +191,7 @@ label {
 }
 
 .currency-image {
+  /* styling for the image between the currency input boxes */
   max-width: 100px;
   height: 100px;
   margin: 10px; 
