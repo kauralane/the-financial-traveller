@@ -51,6 +51,7 @@ $(function () {
         $(`#news-heading`).empty();
         let userInput = $('#search-input').val().trim();
 
+            if (userInput !== "") {
         // Base URL with language, category (business), and limit on number of articles
         const newsURL = `https://newsdata.io/api/1/news?apikey=pub_${newsAPIKey}&qInTitle=${userInput}&language=en&category=business&size=3`;
 
@@ -65,7 +66,7 @@ $(function () {
             .then(function (data) {
                 renderNews(data);
             })
-
+        }  
     }
 
 // Function to render results from API to the page
