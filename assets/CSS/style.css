@@ -8,6 +8,11 @@ body {
 
 #navbar-brand {
   color: white;
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
 }
 
 .custom-navbar .navbar-nav .nav-link {
@@ -112,12 +117,12 @@ h5 {
   font-weight: bolder;
 }
 
-
 .news-story-img {
   padding-top: 15px;
   height: 200px;
   width: 100%; 
   object-fit: contain; 
+  border-radius: 10px;
 }
 
 #search-input {
