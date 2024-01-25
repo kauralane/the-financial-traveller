@@ -65,6 +65,9 @@ $(function () {
             .then(function (data) {
                 renderNews(data);
             })
+            .catch ({
+
+        })
 
     }
 
