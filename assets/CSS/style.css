@@ -112,6 +112,10 @@ h5 {
   border: none;
 }
 
+.cards h5 {
+  text-overflow: ellipsis;
+}
+
 .cards p {
   overflow: hidden;
   text-overflow: ellipsis;
