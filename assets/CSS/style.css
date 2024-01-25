@@ -7,6 +7,10 @@ body {
   color: white;
 }
 
+#navbar-brand {
+  color: white;
+}
+
 .custom-navbar .navbar-nav .nav-link {
   /* styling with !important to override any bootstrap styling we didn't want */
   color: white !important;
