@@ -168,4 +168,15 @@ $(function () {
         localStorage.clear();
         $('#history').empty();
     })
+
+    $('#search-input').on('keypress', function (e) {
+        // Check if the key pressed is 'Enter' which has a key code of '13')
+        if (e.which === 13) {
+            // If 'Enter' is pressed and the search input is not empty, run the fetchNews function
+            let userInput = $('#search-input').val().trim();
+            if (userInput !== "") {
+                fetchNews();
+            }
+        }
+    });
 })
