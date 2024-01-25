@@ -8,16 +8,19 @@ body {
 
 #navbar-brand {
   color: white;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto Slab', serif;
+  font-size: larger;
 }
 
 h1 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 .custom-navbar .navbar-nav .nav-link {
   color: white !important;
   font-family: "Playfair Display", serif;
+  font-weight: 900 !important;
+  font-size: medium;
 }
 
 .custom-navbar .navbar-toggler-icon {
