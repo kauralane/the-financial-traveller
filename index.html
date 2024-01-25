@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Financial Traveller</title>
 
-  <!-- Add Google Fonts links here once decided -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -19,31 +19,23 @@
 </head>
 
   <body>
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-navbar">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon text-white"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- Title on the left -->
-              <li id="navbar-brand">The Financial Traveller</li>
-            </ul>
-            <ul class="navbar-nav">
-              <!-- Links on the right -->
-              <li class="nav-item">
-                <a class="nav-link" href="#news">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#exchange">Exchange Rates</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <!-- creates a button to act as a drop down navbar when the screen is narrowed -->
+          <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#news">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#exchange">Exchange Rates</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
-    
+      </div>
+    </nav>
 
   <!-- Hero Section -->
   <div id="hero-section">
@@ -58,8 +50,8 @@
   <h4 id="prev-search" class="text-center">Previous searches:</h4>
   <div id="history" class="text-center">
   </div>
-  <button id="clear-history-btn" class="btn btn-primary">Clear Search History</button>
-  </section>
+
+  <button id="clear-history-btn" class="btn btn-secondary">Clear Search History</button>
 
   <!--New section-->
   <section id="news">
@@ -69,12 +61,12 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-12">
-          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> <!-- creates a carousel with an interval to cycle through the cards -->
             <div class="carousel-inner">
 
               <!---card0--->
               <div class="carousel-item active">
-                <div class="cards card h-100 mx-auto col-sm-12 col-md-6 col-lg-4"
+                <div class="cards card h-100 mx-auto col-sm-12 col-md-6 col-lg-4" data-bs-theme="dark"
                   style="width: 100%; max-width: 65rem;">
                   <img class="news-story-img" id="image-0" alt="placeholder image" src="./assets/images/no-news-placeholder.jpeg">
 
@@ -89,7 +81,7 @@
 
               <!---card1--->
               <div class="carousel-item">
-                <div id="card2" class="cards card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4"
+                <div id="card2" class="cards card h-100 mx-auto col-sm-12 cold-md-6 col-lg-4" data-bs-theme="dark"
                   style="width: 100%; max-width: 65rem;">
                   <img class="news-story-img" alt="placeholder image" id="image-1" src="./assets/images/city.jpeg">
                   <div class="card-body">
@@ -104,7 +96,7 @@
               <!--card2-->
               <div class="carousel-item">
                 <div id="card3" class="cards card h-100 mx-auto col-sm-12 col-md-6 col-lg-4"
-                  style="width: 100%; max-width: 65rem;">
+                  style="width: 100%; max-width: 65rem;" data-bs-theme="dark">
                   <img id="image-2" alt="placeholder image" class="news-story-img"
                     src="./assets/images/trading-image.jpeg">
                   <div class="card-body">
@@ -117,13 +109,16 @@
               </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
+            <!-- control buttons for the carousel to slide to previous or next card -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev"> 
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
+
             <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
+
           </div>
         </div>
       </div>
@@ -134,6 +129,7 @@
     <div class="currency-container">
     <h3>Currency Convertor</h3>
     <label for="base-input" class="label-title">Convert from</label>
+    <!-- Create a drop down menu to select a currency from a list of options -->
     <select name="currencies" id="base-input">
       <option value="" disabled selected>Select a currency</option>
       <option value="AED">United Arab Emirates Dirham</option>
@@ -474,8 +470,7 @@
     <div id="exchange-results">
     </div>
   </section>
-
-
+  
   <!-- jQuery script -->
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 

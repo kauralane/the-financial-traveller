@@ -52,7 +52,7 @@ h5 {
 
 #news, #news-search {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-top: 20px;
 }
 
@@ -162,7 +162,7 @@ label {
 }
 
 #base-input, #target-input {
-  width: 20%;
+  width: 200px;
   text-align: center;
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -196,6 +196,6 @@ label {
   padding-bottom: 5px;
 }
 
-sections {
-  padding-bottom: 200px;
+section {
+  padding-bottom: 75px;
 }
