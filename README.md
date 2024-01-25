@@ -18,22 +18,31 @@ This project involved designing an application that would fetch data from 2 diff
 
 ## Deployment
 
-Application deployed at the live GitHub URL:
+Application deployed at the live GitHub URL: https://kauralane.github.io/travel-research-app/
 
 ## Usage 
 
+The user can utilise our application to find out information about global economic news articles, and find current exchange rates for the desired currency pair. When a location is entered into the search bar, the news API fetches data about articles for that location, and populates the cards in the carousel. A button is also produced, saving that location to the user's local storage, which they can also clear by clicking the "clear history button". Below is a screenshot displaying the result of entering a location to the search bar:
 
-![Alt text]()
+![Alt text](./assets/images/Demo-News-API-Img.png)
+
+The following image displays the output of a currency exchange pair when the user inputs that pair into the base-input and target-input fields:
+
+![Alt text](./assets/images/Demo-Exchange-API-Img.png)
 
 
 ## Credits
 
+Website for the API responsible for providing news data: https://newsdata.io/ 
+
+Website for the API responsible for providing exchange rate data: https://www.exchangerate-api.com/
+
 
 ## Badges
 
-![badmath](https://img.shields.io/badge/Javascript-19.7-blue)
-![badmath](https://img.shields.io/badge/HTML-73.2-orange)
-![badmath](https://img.shields.io/badge/CSS-7.1-purple)
+![badmath](https://img.shields.io/badge/Javascript-20.1-blue)
+![badmath](https://img.shields.io/badge/HTML-71.3-orange)
+![badmath](https://img.shields.io/badge/CSS-8.6-purple)
 
 ## Features
 
