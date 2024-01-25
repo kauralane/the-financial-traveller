@@ -15,11 +15,9 @@ body {
   filter: invert(1) !important;
 }
 
-
 .custom-navbar .navbar-toggler {
   border-color: white !important;
 }
-
 
 h1,
 h3,
@@ -84,15 +82,30 @@ h5 {
   right: -15%; /* Adjusts the right position of the button to take the user to the next card in the carousel */
 }
 
+/* vertically center carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .cards {
-  height: 500px !important; 
+  height: 350px !important; 
   overflow: hidden; /* Hide overflow content */
+  background: transparent;
+  border: none;
 }
 
 .cards p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: white;
+}
+
+.cards h5 {
+  color: white;
+  font-weight: bolder;
 }
 
 
@@ -102,7 +115,6 @@ h5 {
   width: 100%; 
   object-fit: contain; 
 }
-
 
 #search-input {
   width: 210px;
@@ -178,4 +190,8 @@ label {
 
 .news-location-heading {
   padding-bottom: 5px;
+}
+
+section {
+  padding-bottom: 200px;
 }
