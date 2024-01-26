@@ -33,6 +33,8 @@ $(function () {
     // Event listener for currency exchange submit button
     $('#currency-search-button').on('click', function () {
         getExchangeRate();
+    // Take user to exchange results part of page
+        window.location = "#exchange-results"
     })
     
     // News API (Laura)
@@ -44,6 +46,8 @@ $(function () {
     // On-click function for the search button
     $('#search-button').on('click', function () {
         fetchNews();
+    // Take user to news area of page
+        window.location = "#news"
     })
 
     // Fetch function which incorporates user search
@@ -161,6 +165,9 @@ $(function () {
             })
             .then(function (data) {
                 renderNews(data);
+
+        // Take user to news section
+        window.location = "#news"
     })
     })
 
