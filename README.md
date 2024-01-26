@@ -40,9 +40,9 @@ Website for the API responsible for providing exchange rate data: https://www.ex
 
 ## Badges
 
-![badmath](https://img.shields.io/badge/Javascript-20.1-blue)
-![badmath](https://img.shields.io/badge/HTML-71.3-orange)
-![badmath](https://img.shields.io/badge/CSS-8.6-purple)
+![badmath](https://img.shields.io/badge/Javascript-20.9-blue)
+![badmath](https://img.shields.io/badge/HTML-68.6-orange)
+![badmath](https://img.shields.io/badge/CSS-10.5-purple)
 
 ## Features
 
