@@ -18,7 +18,7 @@ This project involved designing an application that would fetch data from 2 diff
 
 ## Deployment
 
-Application deployed at the live GitHub URL: https://kauralane.github.io/travel-research-app/
+Application deployed at the live GitHub URL: https://kauralane.github.io/the-financial-traveller/ 
 
 ## Usage 
 
